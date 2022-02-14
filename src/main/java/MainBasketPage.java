@@ -3,12 +3,10 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class MainBasketPage {
+public class MainBasketPage extends MainPageElements {
 
-    SelenideElement productTitleInBasket = $(By.xpath("//a[@class='cart-product__title']"));
-
-    public String productTitleTextInBasket() {
-        String titleText = $(productTitleInBasket).attr("outerText");
+    public String productTitleTextInBasket(SelenideElement locator) {
+        String titleText = locator.attr("outerText");
         return titleText;
     }
 }

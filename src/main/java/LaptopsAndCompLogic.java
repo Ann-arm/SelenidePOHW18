@@ -4,13 +4,10 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class LaptopsAndCompLogic {
+public class LaptopsAndCompLogic extends LaptopsAndCompElements {
 
-    SelenideElement categoryLaptops = $(By.xpath("//a[@title = 'Ноутбуки')]"));
-
-    public LaptopsPageLogic openLaptopPage() {
-        $(categoryLaptops)
-                .shouldBe(Condition.visible)
+    public LaptopsPageLogic openLaptopPage(SelenideElement locator) {
+        locator.shouldBe(Condition.visible)
                 .click();
         return page(LaptopsPageLogic.class);
     }
